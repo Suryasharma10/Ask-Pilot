@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="container">
       <div className="chat-header">
-        <h1>AI Agent</h1>
+        <h1>Ask Pilot</h1>
       </div>
 
       <div className="chat-messages">
