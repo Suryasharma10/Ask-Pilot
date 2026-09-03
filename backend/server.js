@@ -6,7 +6,7 @@ const app = express();
 
 // Enable CORS with explicit configuration
 const corsOptions = {
-    origin: ["http://localhost:5173", "http://localhost:5175"],
+    origin: "https://ask-pilot-eight.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]

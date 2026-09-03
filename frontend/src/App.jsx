@@ -17,7 +17,7 @@ function App() {
 
     try {
       const result = await axios.post(
-        "http://localhost:5000/api/chat",
+        "https://ask-pilot.onrender.com/api/chat",
         {
           message: userMessage,
         }
