@@ -36,9 +36,9 @@ app.post("/api/chat", async (req, res) => {
     try {
         const { message,thread_Id } = req.body;
         //console.log("Received message:", message);
-        if (!message) {
+        if (!message || !thread_Id) {
             return res.status(400).json({
-                error: "Message is required"
+                error: "Message and thread ID are required"
             });
         }
 
@@ -53,7 +53,7 @@ app.post("/api/chat", async (req, res) => {
             },
             {
                 configurable: {
-                    thread_id: "thread_Id"
+                    thread_id: thread_Id
                 }
             }
         );
