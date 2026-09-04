@@ -34,8 +34,8 @@ app.get("/api/test", (req, res) => {
 
 app.post("/api/chat", async (req, res) => {
     try {
-        const { message } = req.body;
-        console.log("Received message:", message);
+        const { message,thread_Id } = req.body;
+        //console.log("Received message:", message);
         if (!message) {
             return res.status(400).json({
                 error: "Message is required"
@@ -53,7 +53,7 @@ app.post("/api/chat", async (req, res) => {
             },
             {
                 configurable: {
-                    thread_id: "1"
+                    thread_id: "thread_Id"
                 }
             }
         );

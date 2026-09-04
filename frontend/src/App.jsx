@@ -10,6 +10,12 @@ function App() {
   const sendMessage = async () => {
     if (!message.trim()) return;
 
+    let thread_Id = localStorage.getItem("thread_id");
+    if(!thread_Id) {
+      thread_Id = crypto.randomUUID();
+      localStorage.setItem("thread_id", thread_Id);
+    }
+
     const userMessage = message;
     setMessage("");
     setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
@@ -20,6 +26,7 @@ function App() {
         "https://ask-pilot.onrender.com/api/chat",
         {
           message: userMessage,
+          thread_Id: thread_Id,
         }
       );
 
